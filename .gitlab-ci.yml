@@ -1,0 +1,15 @@
+default:
+    image: google/cloud-sdk:alpine
+    before_script:
+        - gcloud config set project lively-folder-301119
+        - gcloud auth activate-service-account --key-file $GCP_SERVICE_CREDS
+
+build:
+    stage: build
+    script:
+        - gcloud builds submit --tag gcr.io/lively-folder-301119/solucionesit-desarrollo
+
+deploy:
+    stage: deploy
+    script:
+        - gcloud run deploy solucionesit-desarrollo --image gcr.io/lively-folder-301119/solucionesit-desarrollo --platform managed --region us-central1 --allow-unauthenticated

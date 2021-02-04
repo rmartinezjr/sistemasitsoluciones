@@ -1,0 +1,6 @@
+[submodule "fiaestransac"]
+	path = fiaestransac
+	url = https://janzora@bitbucket.org/fiaes/fiaestransac.git
+[submodule "fiaespriv"]
+	path = fiaespriv
+	url = https://janzora@bitbucket.org/fiaes/fiaespriv.git
